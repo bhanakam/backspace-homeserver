@@ -1,0 +1,50 @@
+% Copyright 2012 Dominik Wagenfuehr <dominik.wagenfuehr@deesaster.org>
+% Dieses Dokument unterliegt der Creative-Commons-Lizenz
+% "Namensnennung-Weitergabe unter gleichen Bedingungen 3.0 Deutschland"
+% [http://creativecommons.org/licenses/by-sa/3.0/de/].
+
+% CC-Lizenz ein- oder ausblenden
+\newboolean{showcclicense}
+\setboolean{showcclicense}{false}
+\newcommand*{\ShowCCLicense}[1][true]{%
+    \setboolean{showcclicense}{#1}%
+}
+
+% Frame-Subtitle ein- oder ausblenden
+\newboolean{showframesubtitle}
+\setboolean{showframesubtitle}{false}
+\newcommand*{\ShowFrameSubtitles}[1][true]{%
+    \setboolean{showframesubtitle}{#1}%
+}
+
+
+% Box-Definitionen
+\definecolor{dunkelgrau}{gray}{0.35}
+\definecolor{hellgrau}{gray}{0.93}
+\definecolor{hellgelb}{rgb}{1.0,1.0,0.9}
+
+\newcommand{\ListingBox}[1]
+{%
+    \begin{small}
+        \begin{semiverbatim}
+            \fcolorbox{dunkelgrau}{hellgelb}{%
+                \begin{minipage}{0.965\linewidth}
+                    #1
+                \end{minipage}
+            }
+        \end{semiverbatim}
+    \end{small}
+}
+
+\newcommand{\CommandBox}[1]
+{%
+    \begin{small}
+        \begin{semiverbatim}
+        \fcolorbox{dunkelgrau}{hellgrau}{%
+            \begin{minipage}{0.965\linewidth}
+                #1
+            \end{minipage}
+        }
+        \end{semiverbatim}
+    \end{small}
+}

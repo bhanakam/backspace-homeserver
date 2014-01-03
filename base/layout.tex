@@ -1,0 +1,129 @@
+% Copyright 2012 Dominik Wagenfuehr <dominik.wagenfuehr@deesaster.org>
+% Dieses Dokument unterliegt der Creative-Commons-Lizenz
+% "Namensnennung-Weitergabe unter gleichen Bedingungen 3.0 Deutschland"
+% [http://creativecommons.org/licenses/by-sa/3.0/de/].
+
+%%%%%%%%%%%%%%%
+% Coloring
+%%%%%%%%%%%%%%%
+
+\definecolor{basecolor}{RGB}{29,77,153}
+\definecolor{secondcolor}{RGB}{246,249,252}
+\definecolor{thirdcolor}{RGB}{255,255,255}
+
+% infolines color
+\setbeamercolor{palette primary}{fg=white,bg=basecolor}
+\setbeamercolor{palette secondary}{fg=black,bg=secondcolor}
+\setbeamercolor{palette tertiary}{fg=black,bg=thirdcolor}
+
+% frame and title color
+\setbeamercolor{frametitle}{fg=white,bg=basecolor}
+\setbeamercolor{titlelike}{fg=white,bg=basecolor}
+\setbeamerfont{frametitle}{series=\bfseries}
+
+% TOC color
+\setbeamercolor{section in toc}{fg=black}
+
+% text color
+\setbeamercolor{normal text}{fg=black,bg=white}
+
+% item color
+\setbeamercolor{item}{fg=basecolor}
+\setbeamercolor{itemize item}{fg=basecolor}
+
+%%%%%%%%%%%%%%%
+% Theme
+%%%%%%%%%%%%%%%
+
+% Theme-Auswahl
+\useinnertheme{rectangles}
+\useoutertheme{infolines}
+\usecolortheme{default}
+\usefonttheme{default}
+
+%%%%%%%%%%%%%%%
+% Template
+%%%%%%%%%%%%%%%
+
+% Keine Navigationssymbole
+\setbeamertemplate{navigation symbols}{}
+
+% opaque preview of further text on sheet
+\setbeamercovered{invisible}
+
+% Headline
+\setbeamertemplate{headline}
+{%
+    %empty
+}
+
+% Footline
+\setbeamertemplate{footline}
+{%
+    \begin{beamercolorbox}[dp=3px,ht=6px,wd=\paperwidth,left]{palette secondary}%
+        \setlength{\fboxsep}{0pt}%
+        \parbox{2.1cm}{\centering{}\insertdate{}}%
+        \ifthenelse{\boolean{showcclicense}}{%
+            \parbox{6.7cm}{\centering{}\inserttitle{} – \insertsubtitle{}}%
+            \parbox{2.5cm}{\centering{}Seite \insertframenumber{} von \inserttotalframenumber{}}%
+            \parbox{1.5cm}{\centering{}\href{http://creativecommons.org/licenses/by-sa/3.0/deed.de}{\includegraphics[height=6px]{images/cc-by-sa.pdf}}}%
+        }{%
+            \parbox{8.2cm}{\centering{}\inserttitle{} – \insertsubtitle{}}%
+            \parbox{2.5cm}{\centering{}Seite \insertframenumber{} von \inserttotalframenumber{}}%
+        }
+    \end{beamercolorbox}%
+    \vspace*{4px}%
+}
+
+% Frametitle
+\setbeamertemplate{frametitle}
+{%
+    \ifthenelse{\boolean{showframesubtitle}}{%
+        \vspace*{-1px}\hspace*{-11px}%
+        \begin{beamercolorbox}[dp=4px,ht=34px,wd=39px,left]{palette primary}%
+            \hspace*{3px}%
+            \includegraphics[width=32px]{images/logo_weiss_klein.pdf}%
+        \end{beamercolorbox}
+        
+        \vspace*{-39px}\hspace*{27px}%
+        \begin{beamercolorbox}[dp=8px,ht=30px,wd=325px,left]{palette primary}%
+            \hspace*{5px}%
+            \insertframetitle{}\\[-0.4em]%
+            \hspace*{5px}%
+            {\footnotesize \insertframesubtitle{}}%
+        \end{beamercolorbox}%
+    }{%
+        \vspace*{-1px}\hspace*{-11px}%
+        \begin{beamercolorbox}[dp=4px,ht=28px,wd=32px,left]{palette primary}%
+            \hspace*{2px}%
+            \includegraphics[width=26px]{images/logo_weiss_klein.pdf}%
+        \end{beamercolorbox}
+        
+        \vspace*{-33px}\hspace*{20px}%
+        \begin{beamercolorbox}[dp=10px,ht=22px,wd=332px,left]{palette primary}%
+            \hspace*{5px}%
+            \insertframetitle{}%
+        \end{beamercolorbox}%
+    }%
+}
+
+% Titelseite
+\setbeamertemplate{title page}
+{%
+    \begin{beamercolorbox}[sep=10px,wd=\linewidth,right]{transparent}%
+        \includegraphics[width=120px]{images/logo_blau_gross.pdf}%
+    \end{beamercolorbox}%
+
+    \vspace*{4em}%
+    \begin{beamercolorbox}[sep=10px,wd=\linewidth,center]{palette primary}%
+        {\LARGE\inserttitle{}}\\[0.5em]
+        {\large\insertsubtitle{}}
+    \end{beamercolorbox}%
+
+    \vspace*{3em}%
+    \begin{beamercolorbox}[wd=\linewidth,center]{transparent}%
+        \insertauthor{}\\[0.2em]%
+        \insertinstitute{}~\\[0.5em]%
+        \insertdate{}%
+    \end{beamercolorbox}%
+}
